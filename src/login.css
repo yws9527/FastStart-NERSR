@@ -1,0 +1,51 @@
+.App-right {
+  width: 300px;
+  float: right;
+  margin-top: -50px;
+}
+
+h5 {
+  text-align: center;
+  letter-spacing: 5px;
+  margin-top: 0px;
+}
+
+.App-form {
+  padding: 10px 5px;
+  font-size: 12px;
+}
+
+.form-input {
+  margin: 10px 0;
+  height: 28px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 75%;
+  padding: 0 4px;
+}
+
+.form-btn {
+  width: 80%;
+  height: 30px;
+  margin: 10px 0 0 34px;
+  background: #2d8cf0;
+  border: 1px solid #2d8cf0;
+  padding: 2px 10px;
+  color: #eee;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.form-tips {
+  text-align: right;
+  margin: 18px 22px 0 0;
+  color: #999;
+}
+.form-tips>b {
+  color: #2d8cf0;
+  cursor: pointer;
+}
