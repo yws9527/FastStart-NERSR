@@ -11,8 +11,8 @@ class Login extends Component {
 		}
     // 为了在回调中使用 `this`，这个绑定是必不可少的
 		this.switchUi = this.switchUi.bind(this)
-		this.postMe = this.postMe.bind(this)
 		this.getInput = this.getInput.bind(this)
+		this.postRequest = this.postRequest.bind(this)
   }
 
   switchUi(event) {
@@ -24,7 +24,7 @@ class Login extends Component {
 		event.preventDefault()
 	}
 	
-	postMe () {
+	postRequest () {
 		// 登录 | 注册 请求
 	}
 
@@ -46,7 +46,7 @@ class Login extends Component {
 					<input className="form-input" type="text" value={this.state.username} onChange={this.getInput} id="username" placeholder="请输入用户名" autoComplete="off"/><br />
 					<label htmlFor="password">密码：</label>
 					<input className="form-input" type="password" value={this.state.password} onChange={this.getInput} id="password"  placeholder="请输入密码" autoComplete="off"/><br />
-					<input className="form-btn" type="button" value={this.state.isLogin ? '登录': '注册'} onClick={this.postMe} />
+					<input className="form-btn" type="button" value={this.state.isLogin ? '登录': '注册'} onClick={this.postRequest} />
 					<p className="form-tips">
 						{!this.state.isLogin ? '已有': '尚无'}账户，请&nbsp;
 						<b onClick={this.switchUi}>{!this.state.isLogin ? '登录': '注册'}</b>
