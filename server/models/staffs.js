@@ -1,5 +1,5 @@
 // 职员模块
-const db = require('../configs/setting')
+const db = require('../configs/mongsdb')
 const Schema = db.Schema
 const staffSchema = new Schema({
   age: Number,

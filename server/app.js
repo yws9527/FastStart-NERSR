@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const router = require('./routes/routers')
 
-app.get('/', router.showIndex)
+app.post('/login', router.user.login)
+app.post('/register', router.user.register)
 
 
-
-app.listen(22222, 'localhost')
+app.listen(3000, 'localhost')

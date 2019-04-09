@@ -1,5 +1,5 @@
 // 事项模块
-const db = require('../configs/setting')
+const db = require('../configs/mongsdb')
 const Schema = db.Schema
 const menuSchema = new Schema({
   title: String,

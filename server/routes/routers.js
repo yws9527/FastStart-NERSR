@@ -1,5 +1,9 @@
-const showIndex = function (req, res, next) {
-  res.send({res: '你来啦！'})
-}
+const user = require('./userRouters.js')
+const menu = require('./menuRouters.js')
+const staff = require('./staffRouters.js')
 
-exports.showIndex = showIndex // 访问首页的路由
+module.exports = {
+	user,
+	menu,
+	staff
+}

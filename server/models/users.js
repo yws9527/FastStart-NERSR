@@ -1,5 +1,5 @@
 // 用户模块
-const db = require('../configs/setting')
+const db = require('../configs/mongsdb')
 const Schema = db.Schema
 const userSchema = new Schema({
   age: Number,

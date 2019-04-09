@@ -5,7 +5,7 @@ class Login extends Component {
 	constructor(props) {
     super(props)
     this.state = {
-			isLogin: false,
+			isLogin: true,
 			username: '',
 			password: ''
 		}
@@ -23,9 +23,10 @@ class Login extends Component {
 		}))
 		event.preventDefault()
 	}
-	
+
 	postRequest () {
-		// 登录 | 注册 请求
+		// 登录 | 注册请求
+
 	}
 
 	getInput (event) {
@@ -52,7 +53,7 @@ class Login extends Component {
 						<b onClick={this.switchUi}>{!this.state.isLogin ? '登录': '注册'}</b>
 					</p>
 				</form>
-			</div>	
+			</div>
 		)
 	}
 }
