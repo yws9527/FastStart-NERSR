@@ -1,6 +1,8 @@
 const user = require('../models/users.js')
 
 const login = function (req, res, next) {
+	console.log(req.body, 'user')
+	user.find
   res.send({res: '欢迎回来！'})
 }
 const register = function (req, res, next) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './login.css'
+import {Fetch} from './utils/peiqi.js'
 
 class Login extends Component {
 	constructor(props) {
@@ -26,7 +27,15 @@ class Login extends Component {
 
 	postRequest () {
 		// 登录 | 注册请求
-
+		Fetch('/login', {
+			method: 'post',
+			body: {
+				username: this.state.username,
+				password: this.state.password
+			}
+		}).then(res => {
+			console.log(res)
+		})
 	}
 
 	getInput (event) {
