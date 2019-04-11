@@ -4,6 +4,8 @@
 /node_modules
 /server/node_modules
 /.pnp
+/.vscode
+/.idea
 .pnp.js
 
 # testing
