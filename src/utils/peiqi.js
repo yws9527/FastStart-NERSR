@@ -1,3 +1,4 @@
+import { Component } from 'react'
 //兼容包
 import 'whatwg-fetch'
 
@@ -23,7 +24,7 @@ function parseJSON (response) {
 }
 
 // 封装
-export function Fetch (url, options) {
+Component.prototype.$http = function (url, options) {
 	options.mode = 'cors'
   options.headers = {
     'Accept': 'application/json',
@@ -47,3 +48,4 @@ export function Fetch (url, options) {
 
   return defer
 }
+

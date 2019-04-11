@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './login.css'
-import {Fetch} from './utils/peiqi.js'
 
 class Login extends Component {
 	constructor(props) {
@@ -14,6 +13,8 @@ class Login extends Component {
 		this.switchUi = this.switchUi.bind(this)
 		this.getInput = this.getInput.bind(this)
 		this.postRequest = this.postRequest.bind(this)
+		this.getLogin = this.getLogin.bind(this)
+		this.getRegister = this.getRegister.bind(this)
   }
 
   switchUi(event) {
@@ -25,17 +26,45 @@ class Login extends Component {
 		event.preventDefault()
 	}
 
-	postRequest () {
+	async postRequest () {
 		// 登录 | 注册请求
-		Fetch('/login', {
+		if (this.state.isLogin) {
+			this.getLogin()
+		} else {
+			this.getRegister()
+		}
+	}
+
+	async getLogin () {
+		const {res} = await this.$http('/login', {
 			method: 'post',
 			body: {
 				username: this.state.username,
 				password: this.state.password
 			}
-		}).then(res => {
-			console.log(res)
 		})
+		if (res === 1) {
+			alert('欢迎' + this.state.username + '回来！')
+		} else {
+			alert('尚未注册，请先注册！')
+			this.setState({isLogin: false})
+		}
+	}
+
+	async getRegister () {
+		const {res} = await this.$http('/register', {
+			method: 'post',
+			body: {
+				username: this.state.username,
+				password: this.state.password
+			}
+		})
+		if (res === 'success') {
+			alert('您已成功注册，请登录！')
+			this.setState({isLogin: true})
+		} else {
+			alert(res)
+		}
 	}
 
 	getInput (event) {
