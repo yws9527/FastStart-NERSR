@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from "react-router-dom";
-import config from './routes/routeCfg.js';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './index.css';
+import App from './App'
 import * as serviceWorker from './serviceWorker';
 
 require('./utils/peiqi.js')
 
+// 参考这个地址的demo https://reacttraining.com/react-router/web
+
 ReactDOM.render(
-  <Router routes={config} />,
+  <Router>
+    <Switch>
+      <Route path='/' component={App}/>
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change

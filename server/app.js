@@ -44,4 +44,4 @@ app.post('/login', router.user.login)
 app.post('/register', router.user.register)
 
 
-app.listen(22222, '192.168.83.24')
+app.listen(22222, 'localhost')

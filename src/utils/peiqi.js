@@ -6,7 +6,7 @@ require('babel-polyfill')
 require('es6-promise').polyfill()
 
 // 基础ip
-const baseURI = "http://192.168.83.24:22222"
+const baseURI = "http://localhost:22222"
 // 检测状态
 function checkStatus (response) {
   if (response.status === 200 && response.ok) {
