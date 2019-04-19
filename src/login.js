@@ -34,7 +34,6 @@ class Login extends Component {
 		} else {
 			await this.getRegister()
 		}
-		history.push('/perfectInfo')
 	}
 
 	async getLogin () {
@@ -62,8 +61,9 @@ class Login extends Component {
 			}
 		})
 		if (res === 'success') {
-			alert('您已成功注册，请登录！')
-			this.setState({isLogin: true})
+			alert('您已成功注册，请完善个人信息！')
+			history.push('/perfectInfo')
+			// this.setState({isLogin: true})
 		} else {
 			alert(res)
 		}

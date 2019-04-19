@@ -3,7 +3,7 @@ const User = require('../models/users.js')
 const login = function (req, res, next) {
 	console.log(req.body, 'user')
 	User.find({username: req.body.username}, function (err, docs) {
-		if (err) throw error
+		if (err) throw err
 		if (docs.length) {
 			res.json({res: 1})
 		} else {
@@ -22,12 +22,13 @@ const register = function (req, res, next) {
 	  company: ''
 	}
 	User.find({username: body.username}, function (err, docs) {
-		if (err) throw error
+		if (err) throw err
 		if (docs.length) {
 			res.json({res: '该用户名已被占用！'})
 		} else {
 			User.create({username: body.username, password: body.password, ...base}, function (err, docs2) {
-				if (err) throw error
+				if (err) throw err
+				req
 				res.json({res: 'success'})
 			})
 		}
