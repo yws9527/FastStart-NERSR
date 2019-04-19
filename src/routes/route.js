@@ -1,17 +1,16 @@
 import React from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {Router, Route, Switch} from 'react-router-dom'
 import * as _ from '../exports'
-
+import history from './oHistory'
 
 const BasicRoute = () => (
-  <HashRouter>
+  <Router history={history}>
     <Switch>
       <Route exact path="/" component={_.App}/>
-      <Route exact path="/login" component={_.Login} />
+      <Route exact path="/login" component={_.Login}/>
       <Route exact path="/perfectInfo" component={_.PerfectInfo}/>
     </Switch>
-  </HashRouter>
+  </Router>
 )
-
 
 export default BasicRoute

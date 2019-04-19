@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './login.css'
+import history from './routes/oHistory'
 
 class Login extends Component {
 	constructor(props) {
@@ -29,10 +30,11 @@ class Login extends Component {
 	async postRequest () {
 		// 登录 | 注册请求
 		if (this.state.isLogin) {
-			this.getLogin()
+			await this.getLogin()
 		} else {
-			this.getRegister()
+			await this.getRegister()
 		}
+		history.push('/perfectInfo')
 	}
 
 	async getLogin () {

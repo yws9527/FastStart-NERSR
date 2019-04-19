@@ -1,0 +1,41 @@
+.perfect-info {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info-form {
+  width: 600px;
+  padding: 10px 5px;
+  font-size: 12px;
+}
+.h2-info {
+  padding-right: 100px;
+}
+.form-input-info {
+  margin: 20px 0;
+  height: 28px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 75%;
+  padding: 0 4px;
+}
+
+.form-btn-info {
+  width: 76.8%;
+  height: 30px;
+  margin: 10px 0 0 34px;
+  background: #2d8cf0;
+  border: 1px solid #2d8cf0;
+  padding: 2px 10px;
+  color: #eee;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+

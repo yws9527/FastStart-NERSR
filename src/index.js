@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import Router from './routes/route'
+import Orouter from './routes/route'
 import * as serviceWorker from './serviceWorker'
 require('./utils/peiqi.js')
 
 // 参考这个地址的demo https://reacttraining.com/react-router/web
 
 ReactDOM.render(
-  <Router />,
+  <Orouter/>,
   document.getElementById('root')
 )
 // If you want your app to work offline and load faster, you can change
