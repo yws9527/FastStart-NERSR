@@ -26,6 +26,7 @@ function parseJSON (response) {
 // 封装
 Component.prototype.$http = function (url, options) {
 	options.mode = 'cors'
+  options.credentials = 'include'
   options.headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json'

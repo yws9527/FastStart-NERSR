@@ -23,7 +23,13 @@
   width: 75%;
   padding: 0 4px;
 }
-
+.form-input-info.disabled {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .form-btn-info {
   width: 76.8%;
   height: 30px;

@@ -7,8 +7,8 @@ const url = require('url')
 const querystring = require('querystring')
 const path = require('path')
 const createError = require('http-errors')
-const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+const session = require('express-session')
 const router = require('./routes/routers')
 
 // 自定义跨域中间件
@@ -20,12 +20,18 @@ const allowCors = function(req, res, next) {
   next()
 }
 
+app.use(session({
+  resave: false,
+  secret: 'keyboard cat',
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 12 // 设置 session 的有效时间，单位毫秒
+  }
+}))
 app.use(allowCors)
 app.use(logger('dev'))
-app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
 
 // 错误处理
 /*app.use(function(req, res, next) {
@@ -42,6 +48,8 @@ app.use(function(err, req, res, next) {
 
 app.post('/login', router.user.login)
 app.post('/register', router.user.register)
+app.get('/registed', router.user.registed)
+app.post('/updateInfo', router.user.updateInfo)
 
 
 app.listen(22222, 'localhost')
