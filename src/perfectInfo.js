@@ -44,7 +44,10 @@ class PerferInfo extends Component {
   }
    async postInfo() {
     try {
-      const {res} = await this.$http('/updateInfo', {method: 'post'})
+      const {res} = await this.$http('/updateInfo', {
+        method: 'post',
+        body: this.state
+      })
       if (res === 1) {
         alert('用户信息更新成功！')
       } else {

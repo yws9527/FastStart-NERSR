@@ -17,7 +17,13 @@ const allowCors = function(req, res, next) {
   res.header('Access-Control-Allow-Credentials','true')
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
   res.header('Access-Control-Allow-Methods', '*')
-  next()
+  //header头信息设置结束后，结束程序往下执行，返回
+  if(req.method.toLowerCase() === 'options'){
+    res.status(204)
+    res.json({}) //直接返回空数据，结束此次请求
+  }else{
+    next()
+  }
 }
 
 app.use(session({

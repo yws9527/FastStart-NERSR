@@ -44,15 +44,18 @@ const registed = function (req, res, next) {
 
 // 保存用户提交的信息
 const updateInfo = async function (req, res, next) {
-	const body = req.body
-	const {err, docs} = await User.find({username: body.username})
-	if (err) throw err
-	if (docs.length) {
-		const {err1, result} = await User.update(...{docs, body})
-		if (err1) throw err1
-		res.json({res: 1})
-	} else {
-		res.join({res: -1})
+	try {
+		const body = req.body
+		const username = body.username
+		delete body.username
+		const result = await User.where({username}).updateOne(body)
+		if (result.ok === 1) {
+			res.json({res: 1})
+		} else {
+			res.join({res: -1})
+		}
+	} catch (err) {
+		throw err
 	}
 }
 
