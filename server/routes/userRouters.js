@@ -20,6 +20,7 @@ const register = function (req, res, next) {
 	  sex: '',
 	  work: '',
 	  email: '',
+		avatar: '',
 		company: '',
 		birthday: Date.now()
 	}
@@ -58,6 +59,40 @@ const updateInfo = async function (req, res, next) {
 		throw err
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.login = login // 登录的路由
 exports.register = register // 注册的路由

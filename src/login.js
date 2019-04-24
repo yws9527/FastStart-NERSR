@@ -39,7 +39,7 @@ class Login extends Component {
 	async getLogin () {
 		const {res} = await this.$http('/login', {
 			method: 'post',
-			body: {
+			data: {
 				username: this.state.username,
 				password: this.state.password
 			}
@@ -55,7 +55,7 @@ class Login extends Component {
 	async getRegister () {
 		const {res} = await this.$http('/register', {
 			method: 'post',
-			body: {
+			data: {
 				username: this.state.username,
 				password: this.state.password
 			}
